@@ -7,6 +7,7 @@
 #include <random>
 #include <string>
 
+#include "ExpertStartPopup.cpp"
 #include "ExpertMapLayer.hpp"
 #include "ExpertStartupLayer.hpp"
 
@@ -40,7 +41,6 @@ protected:
 public:
     virtual void levelDownloadFinished(GJGameLevel*) override;
     virtual void levelDownloadFailed(int) override;
-    void confirmExpertRun(CCObject*);
 
     static ExpertMapLayer* create();
     static ExpertMapLayer* scene();
@@ -48,6 +48,7 @@ public:
 
     void onGoBack(CCObject*);
     void start_expert_run(CCObject*);
+    void confirmExpertRun(CCObject*);
     void downloadLevel(CCObject*);
     void openSettings(CCObject*);
     void openDevs(CCObject*);
