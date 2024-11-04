@@ -8,6 +8,7 @@ project(OptimizedSongSize VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
+    # Add your cpp files here
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})

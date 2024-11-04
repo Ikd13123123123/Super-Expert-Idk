@@ -8,7 +8,10 @@
 #include <string>
 
 #include "ExpertStartPopup.cpp"
+<<<<<<< HEAD
 #include "ExpertMapLayer.hpp"
+=======
+>>>>>>> parent of f34ff7a (update)
 #include "ExpertStartupLayer.hpp"
 
 using namespace geode::prelude;
@@ -47,7 +50,11 @@ public:
     static ExpertMapLayer* replaceScene();
 
     void onGoBack(CCObject*);
+<<<<<<< HEAD
     void start_expert_run(CCObject*);
+=======
+    void startExpertRun(CCObject*);
+>>>>>>> parent of f34ff7a (update)
     void confirmExpertRun(CCObject*);
     void downloadLevel(CCObject*);
     void openSettings(CCObject*);
