@@ -1,5 +1,5 @@
 #pragma once
-
+#include <Geode/DefaultInclude.hpp>
 #include <Geode/ui/GeodeUI.hpp>
 #include <Geode/utils/web.hpp>
 #include <cocos2d.h>
@@ -7,7 +7,6 @@
 #include <random>
 #include <string>
 
-#include "ExpertStartPopup.hpp"
 #include "ExpertMapLayer.hpp"
 #include "ExpertStartupLayer.hpp"
 
@@ -48,7 +47,7 @@ public:
     static ExpertMapLayer* replaceScene();
 
     void onGoBack(CCObject*);
-    void startExpertRun(CCObject*);
+    void start_expert_run(CCObject*);
     void downloadLevel(CCObject*);
     void openSettings(CCObject*);
     void openDevs(CCObject*);
@@ -208,7 +207,7 @@ bool ExpertMapLayer::init() { //beware, this code is dog shit holy fuck
     auto discordBtn = CCMenuItemSpriteExtra::create(discordSprite, this, menu_selector(ExpertMapLayer::openDiscord));
     auto showLevelBtn = CCMenuItemSpriteExtra::create(showLevels, this, menu_selector(ExpertMapLayer::showAllLevels));
     auto labelBtn = CCMenuItemSpriteExtra::create(super_expert_lbl, this, menu_selector(ExpertMapLayer::openDevs));
-    startBtn = CCMenuItemSpriteExtra::create(CCSprite::createWithSpriteFrameName("GJ_longBtn03_001.png"), this, menu_selector(ExpertMapLayer::startExpertRun));
+    startBtn = CCMenuItemSpriteExtra::create(CCSprite::createWithSpriteFrameName("GJ_longBtn03_001.png"), this, menu_selector(ExpertMapLayer::start_expert_run));
 
     addChild(discord_btn_menu);
     discord_btn_menu->addChild(discordBtn);
@@ -446,10 +445,6 @@ void ExpertMapLayer::confirmExpertRun(CCObject*) {
     sharelevels.clear();
     downloadLevels();
 }
-
-void ExpertMapLayer::startExpertRun(CCObject*) {
-    ExpertStartPopup::create()->show();
-};
 
 void ExpertMapLayer::openDevs(CCObject*) {
     FLAlertLayer::create("Thank You!", "<cy>Thanks for downloading!</c>\n\n<cr>Note:</c> This mod is still in active development, we ask any bugs or suggestions be sent in the discord!\n\nThanks Again!\n\n<cg>From: Xanii & Adya</c> <cp><3</c>", "OK")->show();
