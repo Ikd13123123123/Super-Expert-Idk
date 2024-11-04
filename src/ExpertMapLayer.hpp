@@ -8,10 +8,7 @@
 #include <string>
 
 #include "ExpertStartPopup.cpp"
-<<<<<<< HEAD
 #include "ExpertMapLayer.hpp"
-=======
->>>>>>> parent of f34ff7a (update)
 #include "ExpertStartupLayer.hpp"
 
 using namespace geode::prelude;
@@ -51,11 +48,15 @@ public:
 
     void onGoBack(CCObject*);
 <<<<<<< HEAD
+<<<<<<< HEAD
     void start_expert_run(CCObject*);
 =======
     void startExpertRun(CCObject*);
 >>>>>>> parent of f34ff7a (update)
     void confirmExpertRun(CCObject*);
+=======
+    void start_expert_run(CCObject*);
+>>>>>>> parent of 7da2c5d (run settings menu)
     void downloadLevel(CCObject*);
     void openSettings(CCObject*);
     void openDevs(CCObject*);
@@ -439,7 +440,7 @@ void ExpertMapLayer::addMap() {
     showLevelMenu->setVisible(true);
 }
 
-void ExpertMapLayer::confirmExpertRun(CCObject*) {
+void ExpertMapLayer::start_expert_run(CCObject*) {
     skips = Mod::get()->getSettingValue<int64_t>("skips");
     lives = Mod::get()->getSettingValue<int64_t>("lives");
 
